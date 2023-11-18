@@ -1,3 +1,8 @@
+div.body {
+    height: 100%;
+    width: 100%;
+}
+
 div.main {
     background-color: whitesmoke;
     display: flex;
@@ -147,4 +152,60 @@ div.aside {
 .footer .new:hover {
     background-color: cadetblue;
     scale: 1.05;
+}
+
+/* new expenses */
+
+div.newExpenseContainer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: transparent;
+    backdrop-filter: blur(7px);
+}
+
+.new_expense {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    height: 50%;
+    padding: 24px;
+    align-items: center;
+    border-radius: 10px;
+    background-color: white;
+    border: 1px solid grey;
+}
+
+.new_expense > p {
+    font-size: 1.2rem;
+    font-weight: 700;
+    width: 100%;
+    text-align: center;
+    padding: 4px 0;
+    background-color: grey;
+    color: white;
+    margin-bottom: 8px;
+}
+
+.new_expense > form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    width: 60%;
+}
+
+.new_expense input,
+.new_expense select {
+    padding: 4px;
+    width: 100%;
+}
+
+.new_expense input[type='submit'] {
+    width: 50%;
 }
