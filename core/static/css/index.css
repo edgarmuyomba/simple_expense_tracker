@@ -3,6 +3,38 @@ div.body {
     width: 100%;
 }
 
+div.success {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    width: 20rem;
+    justify-content: center;
+    align-items: center;
+    padding: 16px;
+    background-color: lightgreen;
+    top: 10px;
+    left: calc(50% - 10rem);
+    color: darkgreen;
+    animation: 0.8s slideIn 1;
+    animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateY(-100px);
+    }
+}
+
+div.success .title {
+    display: flex;
+    align-items: center;
+    font-size: 1.1rem;
+}
+
+div.success .message {
+    font-size: 0.8rem;
+}
+
 div.main {
     background-color: whitesmoke;
     display: flex;

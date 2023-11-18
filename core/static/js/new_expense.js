@@ -25,7 +25,7 @@ document.addEventListener('DOMContentLoaded', function() {
             closeNewExpense();
             // clear the form
             form.reset();
-            alert(data.message); // Display a message or perform any action
+            showSuccess(data.message);
         })
         .catch(error => {
             // Handle errors
@@ -45,8 +45,18 @@ const openNewExpense = () => {
     container.style.display = '';
 }
 
-const showSuccess = () => {
-
+const showSuccess = (message) => {
+    const success = document.querySelector('div.success');
+    const info = success.querySelector('p.message');
+    info.textContent = message;
+    success.style.display = '';
+    setTimeout(
+        () => {
+            success.style.display = 'none';
+            info.textContent = '';
+        },
+        5000
+    );
 }
 
 const showFailed = () => {
