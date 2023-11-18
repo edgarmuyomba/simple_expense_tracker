@@ -43,27 +43,15 @@
                 <p class="copy">All rights reserved Group 5</p>
             </div>
             <div class="categories">
-                <div class="category">
-                    <p class="name">Food and drinks</p>
-                    <p class="total">
-                        UGX
-                        <span>250,000</span>
-                    </p>
-                </div>
-                <div class="category">
-                    <p class="name">Transport</p>
-                    <p class="total">
-                        UGX
-                        <span>300,000</span>
-                    </p>
-                </div>
-                <div class="category">
-                    <p class="name">Education</p>
-                    <p class="total">
-                        UGX
-                        <span>200,000</span>
-                    </p>
-                </div>
+                {% for category in categories %}
+                    <div class="category">
+                        <p class="name">{{ category.category.name }}</p>
+                        <p class="total">
+                            UGX
+                            <span>{{ category.total_expenditure }}</span>
+                        </p>
+                    </div>
+                {% endfor %}
             </div>
             <div class="aside">
                 <div class="header">
@@ -75,78 +63,27 @@
                     <span>Your Transaction History</span>
                 </div>
                 <div class="transactions">
-                    <div class="transaction">
-                        <div class="icon">
-                            <svg style="width: 20px; height: auto;" xmlns="http://www.w3.org/2000/svg"
-                                viewBox="0 0 24 24">
-                                <title>food-outline</title>
-                                <path
-                                    d="M1 22C1 22.54 1.45 23 2 23H15C15.56 23 16 22.54 16 22V21H1V22M8.5 9C4.75 9 1 11 1 15H16C16 11 12.25 9 8.5 9M3.62 13C4.73 11.45 7.09 11 8.5 11S12.27 11.45 13.38 13H3.62M1 17H16V19H1V17M18 5V1H16V5H11L11.23 7H20.79L19.39 21H18V23H19.72C20.56 23 21.25 22.35 21.35 21.53L23 5H18Z" />
-                            </svg>
+                    {% for expense in expenses %}
+                        <div class="transaction">
+                            <div class="icon">
+                                <svg style="width: 20px; height: auto;" xmlns="http://www.w3.org/2000/svg"
+                                    viewBox="0 0 24 24">
+                                    <title>food-outline</title>
+                                    <path
+                                        d="M1 22C1 22.54 1.45 23 2 23H15C15.56 23 16 22.54 16 22V21H1V22M8.5 9C4.75 9 1 11 1 15H16C16 11 12.25 9 8.5 9M3.62 13C4.73 11.45 7.09 11 8.5 11S12.27 11.45 13.38 13H3.62M1 17H16V19H1V17M18 5V1H16V5H11L11.23 7H20.79L19.39 21H18V23H19.72C20.56 23 21.25 22.35 21.35 21.53L23 5H18Z" />
+                                </svg>
+                            </div>
+                            <div class="details">
+                                <p class="name">{{ expense.name }}</p>
+                                <p class="date">{{ expense.date }}</p>
+                                <p class="category" hidden>{{ expense.category }}</p>
+                            </div>
+                            <p class="value">
+                                UGX
+                                <span>{{ expense.amount }}</span>
+                            </p>
                         </div>
-                        <div class="details">
-                            <p class="name">Burger</p>
-                            <p class="date">25th November, 2023</p>
-                        </div>
-                        <p class="value">
-                            UGX
-                            <span>25,000</span>
-                        </p>
-                    </div>
-                    <div class="transaction">
-                        <div class="icon">
-                            <svg style="width: 20px; height: auto;" xmlns="http://www.w3.org/2000/svg"
-                                viewBox="0 0 24 24">
-                                <title>food-outline</title>
-                                <path
-                                    d="M1 22C1 22.54 1.45 23 2 23H15C15.56 23 16 22.54 16 22V21H1V22M8.5 9C4.75 9 1 11 1 15H16C16 11 12.25 9 8.5 9M3.62 13C4.73 11.45 7.09 11 8.5 11S12.27 11.45 13.38 13H3.62M1 17H16V19H1V17M18 5V1H16V5H11L11.23 7H20.79L19.39 21H18V23H19.72C20.56 23 21.25 22.35 21.35 21.53L23 5H18Z" />
-                            </svg>
-                        </div>
-                        <div class="details">
-                            <p class="name">Burger King</p>
-                            <p class="date">25th November, 2023</p>
-                        </div>
-                        <p class="value">
-                            UGX
-                            <span>25,000</span>
-                        </p>
-                    </div>
-                    <div class="transaction">
-                        <div class="icon">
-                            <svg style="width: 20px; height: auto;" xmlns="http://www.w3.org/2000/svg"
-                                viewBox="0 0 24 24">
-                                <title>food-outline</title>
-                                <path
-                                    d="M1 22C1 22.54 1.45 23 2 23H15C15.56 23 16 22.54 16 22V21H1V22M8.5 9C4.75 9 1 11 1 15H16C16 11 12.25 9 8.5 9M3.62 13C4.73 11.45 7.09 11 8.5 11S12.27 11.45 13.38 13H3.62M1 17H16V19H1V17M18 5V1H16V5H11L11.23 7H20.79L19.39 21H18V23H19.72C20.56 23 21.25 22.35 21.35 21.53L23 5H18Z" />
-                            </svg>
-                        </div>
-                        <div class="details">
-                            <p class="name">KFC</p>
-                            <p class="date">25th November, 2023</p>
-                        </div>
-                        <p class="value">
-                            UGX
-                            <span>25,000</span>
-                        </p>
-                    </div>
-                    <div class="transaction">
-                        <div class="icon">
-                            <svg style="width: 20px; height: auto;" xmlns="http://www.w3.org/2000/svg"
-                                viewBox="0 0 24 24">
-                                <title>train-car</title>
-                                <path
-                                    d="M12,4H5A3,3 0 0,0 2,7V15A3,3 0 0,0 5,18L4,19V20H5L7,17.97L9,18V13H4V6H13V8H15V7A3,3 0 0,0 12,4M5,14A1,1 0 0,1 6,15A1,1 0 0,1 5,16A1,1 0 0,1 4,15A1,1 0 0,1 5,14M20.57,9.66C20.43,9.26 20.05,9 19.6,9H12.41C11.95,9 11.58,9.26 11.43,9.66L10,13.77V19.28C10,19.66 10.32,20 10.7,20H11.32C11.7,20 12,19.62 12,19.24V18H20V19.24C20,19.62 20.31,20 20.69,20H21.3C21.68,20 22,19.66 22,19.28V17.91L22,13.77L20.57,9.66M12.41,10H19.6L20.63,13H11.38L12.41,10M12,16A1,1 0 0,1 11,15A1,1 0 0,1 12,14A1,1 0 0,1 13,15A1,1 0 0,1 12,16M20,16A1,1 0 0,1 19,15A1,1 0 0,1 20,14A1,1 0 0,1 21,15A1,1 0 0,1 20,16Z" />
-                            </svg>
-                        </div>
-                        <div class="details">
-                            <p class="name">transport</p>
-                            <p class="date">25th November, 2023</p>
-                        </div>
-                        <p class="value">
-                            UGX
-                            <span>25,000</span>
-                        </p>
-                    </div>
+                    {% endfor %}
                 </div>
                 <div class="footer">
                     <button class="new">Add New</button>
@@ -154,7 +91,7 @@
             </div>
         </div>
     </div>
-    <div class="newExpenseContainer">
+    <div class="newExpenseContainer" style="display: none;">
         <div class="new_expense">
             <p>New Expense</p>
             <p class="error" style="display: none;">

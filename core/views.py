@@ -13,8 +13,8 @@ def index(request):
             'total_expenditure': total_expenditure
         })
 
-    expenses = Expense.objects.all()
-    context = { 'categories': _categories, 'expenses': expenses }
+    expenses = Expense.objects.all().order_by('-date')
+    context = { 'categories': categories, 'expenses': expenses }
     return render(request, 'core/index.html', context)
 
 def new_expense(request):

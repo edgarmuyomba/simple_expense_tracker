@@ -46,9 +46,15 @@ div.main {
 div.navbar {
     display: flex;
     justify-content: center;
+    align-items: center;
     padding: 16px;
     height: 10%;
     background-color: white;
+}
+
+.navbar > .logo {
+    font-weight: 600;
+    font-size: 1.2rem;
 }
 
 .navbar > .profile {
@@ -94,6 +100,8 @@ div.categories {
     display: flex;
     flex-wrap: wrap;
     gap: 10px;
+    justify-content: center;
+    align-content: start;
 }
 
 div.category {
@@ -133,7 +141,9 @@ div.aside {
 }
 
 .aside .transactions {
+    max-height: 100%;
     flex: 1 1 auto;
+    overflow-y: scroll;
 }
 
 .aside .transaction {
@@ -257,6 +267,7 @@ div.newExpenseContainer {
     color: red;
     border-radius: 5px;
     border: 1px solid red;
+    transition: scale 0.3s ease-in-out;
 }
 
 .new_expense input[id='new'] {
@@ -265,4 +276,10 @@ div.newExpenseContainer {
     border-radius: 5px;
     font-weight: 500;
     border: 1px solid darkgreen;
+    transition: scale 0.3s ease-in-out;
+}
+
+.new_expense input[id='cancel']:hover,
+.new_expense input[id='new']:hover {
+    scale: 1.05;
 }

@@ -1,4 +1,9 @@
 document.addEventListener('DOMContentLoaded', function() {
+    // display the new form
+    document.querySelector('.aside > .footer > .new').addEventListener('click', () => {
+        document.querySelector('div.newExpenseContainer').style.display = '';
+    })
+
     document.querySelector('form #new').addEventListener('click', function(event) {
         event.preventDefault();
     
@@ -33,6 +38,12 @@ document.addEventListener('DOMContentLoaded', function() {
             showFailed();
         });
     });
+
+    // cancel the addition
+    document.querySelector('form input#cancel').addEventListener('click', () => {
+        console.log(this);
+        document.querySelector('div.newExpenseContainer').style.display = 'none';
+    })
 });
 
 const closeNewExpense = () => {
