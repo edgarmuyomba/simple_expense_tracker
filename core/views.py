@@ -33,4 +33,4 @@ def new_expense(request):
             code = 500
         else:
             res['message'] = 'New expense successfully created'
-    return JsonResponse(res, status=code)
+        return JsonResponse(res, status=code)

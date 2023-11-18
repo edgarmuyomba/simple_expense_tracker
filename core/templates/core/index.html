@@ -8,6 +8,7 @@
     <title>Expense Tracker</title>
     <link rel="stylesheet" href="{% static 'css/main.css' %}">
     <link rel="stylesheet" href="{% static 'css/index.css' %}">
+    <script src="{% static 'js/new_expense.js' %}"></script>
 </head>
 
 <body>
@@ -149,7 +150,10 @@
     <div class="newExpenseContainer">
         <div class="new_expense">
             <p>New Expense</p>
-            <form method='POST' action="{% url 'core:new_expense' %}">
+            <p class="error" style="display: none;">
+                Failed to create the new record!
+            </p>
+            <form method='POST' action="{% url 'core:new_expense' %}" id="expense-form">
                 {% csrf_token %}
                 <select name="category" required>
                     <option value="Groceries">Groceries</option>
@@ -161,7 +165,10 @@
                 <input type="text" name="name" placeholder="Name" id="name" required>
                 <input type="number" name="amount" placeholder="Amount" id="amount" required>
                 <input type="date" name="date" id="date" required>
-                <input type="submit" value="Add Expense">
+                <div class="buttons">
+                    <input type="button" value="Cancel" id="cancel">
+                    <input type="submit" value="Add Expense" id="new">
+                </div>
             </form>
         </div>
     </div>
