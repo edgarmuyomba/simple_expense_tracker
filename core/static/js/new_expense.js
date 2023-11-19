@@ -30,6 +30,7 @@ document.addEventListener('DOMContentLoaded', function() {
             closeNewExpense();
             // clear the form
             form.reset();
+            location.reload();
             showSuccess(data.message);
         })
         .catch(error => {
