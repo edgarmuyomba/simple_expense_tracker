@@ -1,0 +1,47 @@
+div.navbar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 16px;
+    height: 10%;
+    background-color: white;
+}
+
+.navbar > .logo a {
+    font-weight: 600;
+    font-size: 1.2rem;
+    text-decoration: none;
+    color: black;
+}
+
+.navbar > .profile {
+    margin-left: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 0.7rem;
+}
+
+.navbar > .profile a {
+    margin-left: 8px;
+    padding-left: 8px;
+    border-left: 0.7px solid grey;
+    color: darkslategrey;
+    text-decoration: none;
+    transition: scale 0.3s ease-in-out;
+}
+
+.navbar > .profile a:hover {
+    scale: 1.09;
+}
+
+div.main {
+    background-color: whitesmoke;
+    height: 90%;
+    padding: 2.5rem;
+}
+
+.main p {
+    border-bottom: 0.7px solid grey;
+    padding-bottom: 1.5rem;
+}
