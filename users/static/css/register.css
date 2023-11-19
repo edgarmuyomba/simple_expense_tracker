@@ -1,0 +1,96 @@
+div.body {
+    display: flex;
+    height: 100%;
+    width: 100%;
+}
+
+div.image {
+    height: 100%;
+    width: 50%;
+    background-image: url('../images/signup_bg.jpg');
+    background-position: center;
+    background-size: cover;
+}
+
+div.form-container {
+    width: 50%;
+    padding: 2.5rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.form-container > .logo {
+    font-size: 1.2rem;
+    font-weight: 600;
+    padding-bottom: 2.5rem;
+    margin-bottom: 2.5rem;
+    border-bottom: 0.7px solid grey;
+}
+
+.form-container > .header {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.form-container > .subtitle {
+    font-size: 0.8rem;
+    color: grey;
+}
+
+.form-container > form {
+    margin-top: 2.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.3rem;
+    padding: 0 2rem;
+}
+
+form label {
+    color: grey;
+}
+
+form span.helptext,
+form ul {
+    display: none;
+}
+
+form ul.errorlist {
+    display: block;
+    text-align: center;
+    padding: 10px;
+    background-color: rgb(255, 211, 203);
+    color: red;
+    font-weight: normal;
+    font-size: 0.9rem;
+    list-style-type: none;
+}
+
+form input {
+    width: 100%;
+    padding: 4px 10px;
+}
+
+form input[type='submit'] {
+    background-color: black;
+    border: none;
+    border-radius: 0px;
+    color: white;
+    padding: 8px;
+    transition: background-color 0.3s ease-in-out;
+}
+
+form input[type='submit']:hover {
+    background-color: darkslategray;
+}
+
+.form-container > p.call {
+    margin-top: auto;
+    text-align: center;
+    color: grey;
+    font-size: 0.8rem;
+}
+
+p.call a {
+    color: black;
+    font-size: 0.8rem;
+}

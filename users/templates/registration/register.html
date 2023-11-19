@@ -1,16 +1,37 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Signup</title>
+    <link rel="stylesheet" href="{% static 'css/main.css' %}">
+    <link rel="stylesheet" href="{% static 'css/register.css' %}">
 </head>
+
 <body>
-    <form action="{% url 'users:register' %}" method="POST">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <input type="submit" value="Signup">
-        <input type="hidden" name="next" value="{% url 'core:index' %}">
-    </form>
+    <div class="body">
+        <div class="image"></div>
+        <div class="form-container">
+            <div class="logo">
+                Expense.io
+            </div>
+            <p class="header">Create an Account</p>
+            <p class="subtitle">Track your expenses easily</p>
+            {% if form.errors %}
+            <!-- <p class="error">Your username or password is incorrect. Please try again!</p>   -->
+            {% endif %}
+            <form action="{% url 'users:register' %}" method="POST">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <input type="submit" value="Signup">
+                <input type="hidden" name="next" value="{% url 'core:index' %}">
+            </form>
+            <p class="call">Already have an account? <span><a href="{% url 'users:login' %}">Login</a></span></p>
+        </div>
+    </div>
 </body>
+
 </html>
