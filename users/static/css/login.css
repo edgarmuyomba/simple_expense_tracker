@@ -1,0 +1,104 @@
+div.body {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+div.form-container {
+    width: 50%;
+    height: 100%;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+}
+
+.form-container > .logo {
+    width: 100%;
+    text-align: start;
+    font-weight: 600;
+    font-size: 1.2rem;
+    padding-bottom: 2.5rem;
+    margin-bottom: 2.5rem;
+    border-bottom: 0.7px solid grey;
+}
+
+.form-container > .header {
+    font-weight: 700;
+    font-size: 1.5rem;
+}
+
+.form-container > .subtitle {
+    color: grey;
+    font-size: 0.8rem;
+}
+
+.form-container > p.error {
+    margin-top: 2.4rem;
+    margin-left: 20%;
+    margin-right: 20%;
+    width: auto;
+    text-align: center;
+    padding: 10px;
+    background-color: rgb(255, 211, 203);
+    color: red;
+    font-weight: normal;
+    font-size: 0.9rem;
+}
+
+.form-container > form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin-top: 3rem;
+}
+
+form input {
+    padding: 8px;
+}
+
+form label {
+    color: grey;
+}
+
+form ul.errorlist {
+    display: none;
+}
+
+form input[type='submit'] {
+    width: 100%;
+    border-radius: 0;
+    background-color: black;
+    color: white;
+    border: none;
+    transition: background-color 0.3s ease-in-out;
+}
+
+form input[type='submit']:hover {
+    background-color: darkslategrey;
+}
+
+.form-container p.call {
+    margin-top: auto;
+    text-align: center;
+    color: grey;
+    font-size: 0.8rem;
+}
+
+p.call a {
+    color: black;
+    font-size: 0.8rem;
+}
+
+div.image {
+    width: 50%;
+    height: 100%;
+    background-image: url('../images/login_bg.jpg');
+    background-position: center;
+    background-size: cover;
+}

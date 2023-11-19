@@ -28,8 +28,7 @@
                 {% if user.is_authenticated %}
                     <img src="{% static 'images/profile.jpg' %}" alt="profile">
                     <p class="username">
-                        hello,
-                        <span>{{ user.username }}</span>
+                        {{ user.username }}
                     </p>
                     <a href="{% url 'users:logout' %}">Logout</a>
                 {% else %}
