@@ -25,11 +25,17 @@
         <div class="navbar">
             <div class="logo">Expense.io</div>
             <div class="profile">
-                <img src="{% static 'images/profile.jpg' %}" alt="profile">
-                <p class="username">
-                    hello,
-                    <span>Username</span>
-                </p>
+                {% if user.is_authenticated %}
+                    <img src="{% static 'images/profile.jpg' %}" alt="profile">
+                    <p class="username">
+                        hello,
+                        <span>{{ user.username }}</span>
+                    </p>
+                    <a href="{% url 'users:logout' %}">Logout</a>
+                {% else %}
+                    <a href="{% url 'users:register' %}">Register</a>
+                    <a href="{% url 'users:login' %}">Login</a>
+                {% endif %}
             </div>
         </div>
         <div class="main">
