@@ -35,7 +35,9 @@ New Expense
    ```bash
    pip install -r requirements.txt
    ```
-6. Run the project server and access the project on [localhost:8000](localhost:8000)
+6. Create a file in the base directory of the project named `.env`
+7. Contact me for the django-secret key
+8. Run the project server and access the project on [localhost:8000](localhost:8000)
    ```bash
    python manage.py runserver
    ```
